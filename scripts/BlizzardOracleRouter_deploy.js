@@ -1,12 +1,12 @@
 const hre = require("hardhat");
 
 async function main() {
-	const Contract = await hre.ethers.getContractFactory("BlockchainOracleToken");
+	const Contract = await hre.ethers.getContractFactory("BlizzardOracleRouter");
 	const contract = await Contract.deploy();
 
 	await contract.deployed();
 
-	console.log("BlockchainOracleToken deployed to:", contract.address);
+	console.log("BlizzardOracleRouter deployed to:", contract.address);
 }
 
 main().catch((error) => {

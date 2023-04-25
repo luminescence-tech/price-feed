@@ -3,7 +3,7 @@ require('dotenv').config()
 
 module.exports = {
 	solidity: {
-		version: "0.8.9",
+		version: "0.8.19",
 		settings: {
 			optimizer: {
 				enabled: true
@@ -16,7 +16,7 @@ module.exports = {
 				accounts: [`${process.env.PRIVATE_KEY}`],
 				url: `https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`
 			},
-			ETH_GOERLI: {
+			goerli: {
 				accounts: [`${process.env.PRIVATE_KEY}`],
 				url: `https://eth-goerli.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`
 			}

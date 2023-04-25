@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
@@ -37,8 +37,8 @@ contract BlizzardOracleRouter is
     event PriceRequest(address from, Currency base, Currency quote);
 
     constructor()
-        ERC721("BlockchainOracleToken", "BOT")
-        EIP712("BlockchainOracleToken", "1")
+        ERC721("BlizzardOracleRouter", "BOR")
+        EIP712("BlizzardOracleRouter", "1")
     {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -108,13 +108,16 @@ contract BlizzardOracleRouter is
 
     function getPriceSimple(uint8 base, uint8 quote) external returns (bool) {
         emit PriceRequest(msg.sender, Currency(base), Currency(quote));
-
         return true;
     }
 
     //  {url_base}, {path}, {query}, {headers}
-    function getPriceFull(bytes32 url_base, bytes32 path, bytes32 query, bytes32 headers) external returns (bool) {
-
+    function getPriceFull(
+        bytes32 url_base,
+        bytes32 path,
+        bytes32 query,
+        bytes32 headers
+    ) external returns (bool) {
         return true;
     }
 }
